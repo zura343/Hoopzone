@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-5">
+    <h4><b>Eastern Conference</b></h4>
+    <table class="table table-bordered table-hover text-center align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>#</th>
+                <th>Team</th>
+                <th>W</th>
+                <th>L</th>
+                <th>WIN%</th>
+                <th>GB</th>
+                <th>CONF</th>
+                <th>DIV</th>
+                <th>HOME</th>
+                <th>ROAD</th>
+                <th>NEUTRAL</th>
+                <th>OT</th>
+                <th>LAST 10</th>
+                <th>STREAK</th>
+                {% if current_user.role == "admin" %}
+                <th>Edit</th>
+                {% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in teams %}
+            <tr class="{% if loop.index == 7 %}table-primary{% elif loop.index > 7 %}table-secondary{% endif %}">
+                <td>{{ loop.index }}</td>
+                <td class="text-start">
+                    <img width="30" height="30" src="{{ team.image }}" class="me-2"> {{ team.name }}
+                </td>
+                <td><strong>{{ team.W }}</strong></td>
+                <td>{{ team.L }}</td>
+                <td>{{ team.win_percentage }}</td>
+                <td>{{ team.GB }}</td>
+                <td>{{ team.CONF }}</td>
+                <td>{{ team.DIV }}</td>
+                <td>{{ team.HOME }}</td>
+                <td>{{ team.ROAD }}</td>
+                <td>{{ team.Neutral }}</td>
+                <td>{{ team.OT }}</td>
+                <td>{{ team.LAST10 }}</td>
+                <td class="fw-bold {{ 'text-success' if team.STREAK.startswith('W') else 'text-danger' }}">
+                    {{ team.STREAK }}
+                </td>
+
+                {% if current_user.role == "admin" %}
+                <td>
+                    <a href="/edit/{{ team.id }}" class="btn btn-warning btn-sm">Edit</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% if loop.index == 6 %}
+            <tr class="table-info">
+                <td colspan="15" class="text-center">Playoff Cutoff</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table {
+        font-size: 0.9rem;
+    }
+    .table img {
+        vertical-align: middle;
+    }
+    .table thead th {
+        font-weight: bold;
+    }
+    .table tbody tr.table-primary {
+        background-color: #d9edf7;
+    }
+    .table tbody tr.table-secondary {
+        background-color: #f7f7f7;
+    }
+    .table tbody tr.table-info {
+        background-color: #cce5ff;
+    }
+</style>
+
+
+{% endblock %}

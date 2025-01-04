@@ -1,0 +1,14 @@
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container-lg h-98 bg-light rounded mt-2 p-4 shadow-lg">
+    <div class="row mt-2 justify-content-center">
+        <div class="col-4">
+            <h2>User Details</h2>
+            <h4>Name: {{ user.username }}</h4>
+            <p>Age: {{ user.age }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

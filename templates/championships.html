@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for championship in championships %}
+    <a style="text-decoration: none" href="{{ championship.official_site }}" target="_blank" rel="noopener noreferrer">
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{ championship.logo }}" width="120" height="260" class="card-img-top" alt="{{ championship.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ championship.name }}</h5>
+            <p class="card-text text-muted">{{ championship.country }}</p>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

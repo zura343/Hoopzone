@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Edit Player Statistics</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.player.label(class="form-label") }}
+                    {{ form.player(class="form-control", placeholder="Enter player name") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.team.label(class="form-label") }}
+                    {{ form.team(class="form-control", placeholder="Enter team name") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.gp.label(class="form-label") }}
+                    {{ form.gp(class="form-control", placeholder="Games Played") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.pts.label(class="form-label") }}
+                    {{ form.pts(class="form-control", placeholder="Points Per Game") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.fgm.label(class="form-label") }}
+                    {{ form.fgm(class="form-control", placeholder="Field Goals Made") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.fga.label(class="form-label") }}
+                    {{ form.fga(class="form-control", placeholder="Field Goals Attempted") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.fg_pct.label(class="form-label") }}
+                    {{ form.fg_pct(class="form-control", placeholder="Field Goal Percentage") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.three_pm.label(class="form-label") }}
+                    {{ form.three_pm(class="form-control", placeholder="3-Point Made") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.three_pa.label(class="form-label") }}
+                    {{ form.three_pa(class="form-control", placeholder="3-Point Attempted") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.three_pct.label(class="form-label") }}
+                    {{ form.three_pct(class="form-control", placeholder="3-Point Percentage") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.ftm.label(class="form-label") }}
+                    {{ form.ftm(class="form-control", placeholder="Free Throws Made") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.fta.label(class="form-label") }}
+                    {{ form.fta(class="form-control", placeholder="Free Throws Attempted") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.ft_pct.label(class="form-label") }}
+                    {{ form.ft_pct(class="form-control", placeholder="Free Throw Percentage") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.oreb.label(class="form-label") }}
+                    {{ form.oreb(class="form-control", placeholder="Offensive Rebounds") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.dreb.label(class="form-label") }}
+                    {{ form.dreb(class="form-control", placeholder="Defensive Rebounds") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.reb.label(class="form-label") }}
+                    {{ form.reb(class="form-control", placeholder="Total Rebounds") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.ast.label(class="form-label") }}
+                    {{ form.ast(class="form-control", placeholder="Assists") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.stl.label(class="form-label") }}
+                    {{ form.stl(class="form-control", placeholder="Steals") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.blk.label(class="form-label") }}
+                    {{ form.blk(class="form-control", placeholder="Blocks") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.tov.label(class="form-label") }}
+                    {{ form.tov(class="form-control", placeholder="Turnovers") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.eff.label(class="form-label") }}
+                    {{ form.eff(class="form-control", placeholder="Efficiency Rating") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.min.label(class="form-label") }}
+                    {{ form.min(class="form-control", placeholder="Minutes Played") }}
+                </div>
+
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-success") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

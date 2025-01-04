@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+    <div class="container my-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <button class="btn btn-outline-secondary btn-sm">Tue, Dec 03</button>
+                <button class="btn btn-outline-secondary btn-sm">Hide Scores</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-3">
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h6 class="card-title">FINAL</h6>
+                        <p class="card-text"><strong>MIL</strong> 128 - 107 <strong>DET</strong></p>
+                        <small>EAST GROUP B</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h6 class="card-title">FINAL</h6>
+                        <p class="card-text"><strong>WAS</strong> 87 - 118 <strong>CLE</strong></p>
+                        <small>EAST GROUP C</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div style="text-align: center;">
+    <h1>Rate {{ jersey.name }}</h1>
+    <img src="{{ jersey.image }}" alt="{{ jersey.name }}" class="img-fluid mb-3" width="360" height="180">
+    <p><strong>Current Average Rating:</strong> {{ jersey.rating or 'Not rated yet' }}</p>
+</div>
+
+{% if success %}
+    <div class="alert alert-success" role="alert" style="text-align: center;">
+        Your rating has been submitted successfully!
+    </div>
+{% endif %}
+{% endblock %}

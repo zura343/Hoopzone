@@ -1,0 +1,13 @@
+
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Buy {{ item_type | capitalize }}: {{ item["name"] }}</h2>
+    <img src=" {{ item['image'] }}" width="360" height="720" alt="{{ item['name'] }}" style="max-width: 100%; height: auto;">
+    <p><strong>Description:</strong> {{ item["description"] }}</p>
+    <p><strong>Price:</strong> {{ item["price"] }}₾</p>
+    <a href="/" class="btn btn-success">Confirm Purchase</a>
+</div>
+{% endblock %}
+

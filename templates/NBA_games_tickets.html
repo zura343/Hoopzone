@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        {% for ticket in tickets %}
+        <div class="col-md-4 d-flex justify-content-center mb-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ ticket['image'] }}" class="card-img-top" alt="{{ ticket['name'] }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ ticket["name"] }}</h5>
+                    <p class="card-text">{{ ticket["price"] }}₾</p>
+                    <a href="/buy/{{ ticket['name'] }}" class="btn btn-primary">Buy</a>
+
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+
+<div class="container my-5">
+    <article class="card shadow">
+        <div class="card-body">
+            <header class="mb-4">
+                <h1 class="h3 font-weight-bold text-center">{{news.title}}</h1>
+                <p class="text-center text-muted">
+                    <strong>{{news.author}}</strong> |
+                    <time datetime="2024-12-22">{{news.date}}</time>
+                </p>
+            </header>
+            <figure class="text-center mb-4">
+                <img src="{{news.image}}" class="img-fluid rounded" alt="ბითაძის თამაში კალათბურთში">
+            </figure>
+            <section>
+                <p>
+                    {{news.news}}
+                </p>
+
+            </section>
+<div class="text-center">
+    <iframe width="600" height="400"
+            src="{{news.link}}"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+    </iframe>
+</div>
+
+        </div>
+    </article>
+</div>
+
+
+{% endblock %}

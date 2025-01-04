@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block body %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .carousel-container {
+        max-width: 100%;
+        overflow: hidden;
+        background: linear-gradient(to right, lightblue, #b22222);
+        padding: 20px 10px;
+    }
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin: 5px;
+        color: #333;
+    }
+
+    .team {
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+
+    .score {
+        color: #333;
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: white;
+        font-weight: bold;
+    }
+
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover {
+        color: yellow;
+    }
+</style>
+
+<div class="carousel-container">
+    {% if games %}
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            {% for game in games %}
+            <div class="swiper-slide">
+                <div class="team">
+                    <img width="40" height="40" src="{{ game.team_1_img }}" alt="Team 1 Logo">
+                    {{ game.team_1 }} vs {{ game.team_2 }}
+                    <img width="40" height="40" src="{{ game.team_2_img }}" alt="Team 2 Logo">
+                </div>
+                <div class="score">{{ game.final_score }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    {% else %}
+    <p class="text-center text-muted">No games available at the moment.</p>
+    {% endif %}
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 3,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 5,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 15,
+            },
+        },
+    });
+</script>
+
+
+<div class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for news in newses %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ news.image }}" class="card-img-top" alt="Atlanta Hawks">
+                <div class="card-body">
+                    <h5 class="card-title">{{ news.title }}</h5>
+                    <p class="card-text text-muted">By {{ news.author }} · {{ news.date }}</p>
+                    <a href="/view_news/{{ news.title }}">
+                        <button type="button" class="btn btn-outline-success">მეტის გაგება</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+

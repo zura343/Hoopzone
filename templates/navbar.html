@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-lg">
+        <a href="/"><img width="40" height="40" src="/static/Basketball.png"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Hoopzone</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        NBA
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/standing">standing</a></li>
+                        <li><a class="dropdown-item" href="/players_stats">stat leaders</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        championships
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/championships">championships</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Our shop
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/NBA_games">NBA games ticket</a></li>
+                        <li><a class="dropdown-item" href="/jersey_view">jersey</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            {% if current_user.is_authenticated %}
+            <li class="nav-item dropdown" style="text-decoration: none; list-style: none;">
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img  width="30" height="30" src="/static/person-circle.svg" alt="">
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="/profile/{{ current_user.username }}">profile</a></li>
+                    <li><a class="dropdown-item" href="/log_out"><img width="20" height="20" src="/static/Basketball.png">log out</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <form class="d-flex" role="search">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="/register" class="btn btn-success">register</a>
+                    <a href="/login" class="btn btn-success">login</a>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
