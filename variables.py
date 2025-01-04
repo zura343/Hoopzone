@@ -396,7 +396,7 @@ teams = [
     {"name": "Boston Celtics", "image": "/static/nba_team_logos/Eastern_Conference/Boston.png", "W": 23, "L": 9,
      "win_percentage": .719, "GB": 5, "CONF": "21-7", "DIV": "4-1", "HOME": "12-6", "ROAD": "11-3", "Neutral": "0-0",
      "OT": "2-1", "LAST10": "5-5", "STREAK": "L1"},
-    {"name": "New York Knicks", "image": "/static/nba_team_logos/Eastern_Conference/New York Knick.png", "W": 23,
+    {"name": "New York Knicks", "image": "/static/nba_team_logos/Eastern_Conference/New York knick.png", "W": 23,
      "L": 10, "win_percentage": .697, "GB": 5.5, "CONF": "17-7", "DIV": "5-1", "HOME": "10-4", "ROAD": "13-6",
      "Neutral": "0-0", "OT": "1-0	", "LAST10": "9-1", "STREAK": "W8"},
     {"name": "Orlando magic", "image": "/static/nba_team_logos/Eastern_Conference/Orlando_logo.svg", "W": 20, "L": 14,
