@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header text-center bg-primary text-white">
+            <h4>Edit Team Statistics</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.name.label(class="form-label") }}
+                    {{ form.name(class="form-control", placeholder="Enter team name") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.W.label(class="form-label") }}
+                    {{ form.W(class="form-control", placeholder="Wins") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.L.label(class="form-label") }}
+                    {{ form.L(class="form-control", placeholder="Losses") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.win_percentage.label(class="form-label") }}
+                    {{ form.win_percentage(class="form-control", placeholder="Win Percentage") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.GB.label(class="form-label") }}
+                    {{ form.GB(class="form-control", placeholder="Games Behind") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.CONF.label(class="form-label") }}
+                    {{ form.CONF(class="form-control", placeholder="Conference Record") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.DIV.label(class="form-label") }}
+                    {{ form.DIV(class="form-control", placeholder="Division Record") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.HOME.label(class="form-label") }}
+                    {{ form.HOME(class="form-control", placeholder="Home Record") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.ROAD.label(class="form-label") }}
+                    {{ form.ROAD(class="form-control", placeholder="Road Record") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.Neutral.label(class="form-label") }}
+                    {{ form.Neutral(class="form-control", placeholder="Neutral Record (Optional)") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.OT.label(class="form-label") }}
+                    {{ form.OT(class="form-control", placeholder="Overtime Record (Optional)") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.LAST10.label(class="form-label") }}
+                    {{ form.LAST10(class="form-control", placeholder="Last 10 Games") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.STREAK.label(class="form-label") }}
+                    {{ form.STREAK(class="form-control", placeholder="Current Streak") }}
+                </div>
+
+                <div class="d-grid">
+                    {{ form.submit(class="btn btn-success") }}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

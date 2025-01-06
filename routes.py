@@ -1,8 +1,8 @@
 from flask import render_template, redirect, url_for, flash, request
 from flask_login import login_user, logout_user, login_required
 from ext import app, db
-from forms import JerseyForm, EditJerseyForm, RegisterForm, LoginForm, RatingForm, EditStatsForm
-from models import Jersey, Tickets, User, Player, News, Championships, Teams, Games
+from forms import JerseyForm, EditJerseyForm, RegisterForm, LoginForm, RatingForm, EditStatsForm, TeamsForm
+from models import Jersey, Tickets, User, Player, News, Championships, EasternTeams, WesternTeams, Games
 from werkzeug.security import check_password_hash
 
 from os import path
@@ -191,10 +191,6 @@ def view_news(news_title):
 def edit_player_stats(player_id):
     player_stats = Player.query.get(player_id)
 
-    if not player_stats:
-        flash("Player stats not found.", "danger")
-        return redirect(url_for('home'))
-
     form = EditStatsForm(
         player=player_stats.player,
         team=player_stats.team,
@@ -244,10 +240,8 @@ def edit_player_stats(player_id):
         player_stats.eff = form.eff.data
         player_stats.min = form.min.data
 
-        db.session.commit()
+        db.session.save()
 
-        flash("Player stats updated successfully!", "success")
-        return redirect("/players_stats")
 
 
     return render_template("edit_player_stats.html", player_stats=player_stats, form=form)
@@ -257,8 +251,91 @@ def championships():
     championships = Championships.query.all()
     return render_template("championships.html", championships=championships)
 
-@app.route("/standing")
+@app.route("/standing", methods=["GET"])
 def standing():
-    teams= Teams.query.all()
-    return render_template("standing.html", teams=teams)
+    easternteams= EasternTeams.query.order_by(EasternTeams.win_percentage.desc()).all()
+    westernteams = WesternTeams.query.order_by(WesternTeams.win_percentage.desc()).all()
+    return render_template("standing.html", easternteams=easternteams, westernteams=westernteams)
 
+
+@app.route("/edit_standing/<int:easternteams_id>", methods=["GET", "POST"])
+@login_required
+def edit_standing(easternteams_id):
+    easternteams = EasternTeams.query.get(easternteams_id)
+    form = TeamsForm(
+        name=easternteams.name,
+        W=easternteams.W,
+        L=easternteams.L,
+        win_percentage=easternteams.win_percentage,
+        GB=easternteams.GB,
+        CONF=easternteams.CONF,
+        DIV=easternteams.DIV,
+        HOME=easternteams.HOME,
+        ROAD=easternteams.ROAD,
+        Neutral=easternteams.Neutral,
+        OT=easternteams.OT,
+        LAST10=easternteams.LAST10,
+        STREAK=easternteams.STREAK
+    )
+
+    if form.validate_on_submit():
+        easternteams.name = form.name.data
+        easternteams.W = form.W.data
+        easternteams.L = form.L.data
+        easternteams.win_percentage = form.win_percentage.data
+        easternteams.GB = form.GB.data
+        easternteams.CONF = form.CONF.data
+        easternteams.DIV = form.DIV.data
+        easternteams.HOME = form.HOME.data
+        easternteams.ROAD = form.ROAD.data
+        easternteams.Neutral = form.Neutral.data
+        easternteams.OT = form.OT.data
+        easternteams.LAST10 = form.LAST10.data
+        easternteams.STREAK = form.STREAK.data
+
+        db.session.commit()
+        return redirect(url_for("standing"))
+
+    return render_template("edit_stending.html", form=form)
+
+
+
+@app.route("/edit_westernteam/<int:westernteam_id>", methods=["GET", "POST"])
+@login_required
+def edit_westernteam(westernteam_id):
+    westernteam = WesternTeams.query.get(westernteam_id)
+    form = TeamsForm(
+        name=westernteam.name,
+        W=westernteam.W,
+        L=westernteam.L,
+        win_percentage=westernteam.win_percentage,
+        GB=westernteam.GB,
+        CONF=westernteam.CONF,
+        DIV=westernteam.DIV,
+        HOME=westernteam.HOME,
+        ROAD=westernteam.ROAD,
+        Neutral=westernteam.Neutral,
+        OT=westernteam.OT,
+        LAST10=westernteam.LAST10,
+        STREAK=westernteam.STREAK
+    )
+
+    if form.validate_on_submit():
+        westernteam.name = form.name.data
+        westernteam.W = form.W.data
+        westernteam.L = form.L.data
+        westernteam.win_percentage = form.win_percentage.data
+        westernteam.GB = form.GB.data
+        westernteam.CONF = form.CONF.data
+        westernteam.DIV = form.DIV.data
+        westernteam.HOME = form.HOME.data
+        westernteam.ROAD = form.ROAD.data
+        westernteam.Neutral = form.Neutral.data
+        westernteam.OT = form.OT.data
+        westernteam.LAST10 = form.LAST10.data
+        westernteam.STREAK = form.STREAK.data
+
+        db.session.commit()
+        return redirect(url_for("standing"))
+
+    return render_template("edit_westernteam", form=form)

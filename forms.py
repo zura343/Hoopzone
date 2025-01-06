@@ -67,3 +67,21 @@ class EditStatsForm(FlaskForm):
     eff = FloatField("eff", validators=[DataRequired()])
     min = FloatField("minutes", validators=[DataRequired()])
     submit = SubmitField('save')
+
+
+class TeamsForm(FlaskForm):
+    name = StringField("Team Name", validators=[DataRequired()])
+    W = IntegerField("Wins", validators=[DataRequired()])
+    L = IntegerField("Losses", validators=[DataRequired()])
+    win_percentage = FloatField("Win Percentage", validators=[DataRequired()])
+    GB = FloatField("Games Behind", validators=[DataRequired()])
+    CONF = StringField("Conference Record", validators=[DataRequired()])
+    DIV = StringField("Division Record", validators=[DataRequired()])
+    HOME = StringField("Home Record", validators=[DataRequired()])
+    ROAD = StringField("Road Record", validators=[DataRequired()])
+    Neutral = StringField("Neutral Record", validators=[Optional()])
+    OT = StringField("Overtime Record", validators=[Optional()])
+    LAST10 = StringField("Last 10 Games", validators=[DataRequired()])
+    STREAK = StringField("Current Streak", validators=[DataRequired()])
+    submit = SubmitField("Save")
+

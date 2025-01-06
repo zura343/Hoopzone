@@ -309,27 +309,27 @@ players = [
     },
 
     {"player": "Goga Bitadze",
-        "team": "ORL",
-        "gp": 31,
-        "min": 24.8,
-        "pts": 9.9,
-        "fgm": 4.1,
-        "fga": 6.5,
-        "fg_pct": 63.1,
-        "three_pm": 0.0,
-        "three_pa": 0.5,
-        "three_pct": 6.3,
-        "ftm": 1.6,
-        "fta": 2.3,
-        "ft_pct": 71.4	,
-        "oreb": 3.0	,
-        "dreb": 5.5,
-        "reb": 8.5,
-        "ast": 2.4,
-        "stl": 0.9,
-        "blk": 1.6,
-        "tov": 1.5,
-        "eff": 24.3,}
+     "team": "ORL",
+     "gp": 31,
+     "min": 24.8,
+     "pts": 9.9,
+     "fgm": 4.1,
+     "fga": 6.5,
+     "fg_pct": 63.1,
+     "three_pm": 0.0,
+     "three_pa": 0.5,
+     "three_pct": 6.3,
+     "ftm": 1.6,
+     "fta": 2.3,
+     "ft_pct": 71.4,
+     "oreb": 3.0,
+     "dreb": 5.5,
+     "reb": 8.5,
+     "ast": 2.4,
+     "stl": 0.9,
+     "blk": 1.6,
+     "tov": 1.5,
+     "eff": 24.3, }
 ]
 
 newses = [{"title": "ბითაძის მე-10 ორმაგი დუბლი | გოგა ორლანდოს ისტორიული შედეგის გამეორებაში დაეხმარა",
@@ -389,7 +389,7 @@ championships = [
 
 ]
 
-teams = [
+eastern_teams = [
     {"name": "Cleveland Cavaliers", "image": "/static/nba_team_logos/Eastern_Conference/Cleveland.png", "W": 28, "L": 4,
      "win_percentage": .875, "GB": 0, "CONF": "20-4", "DIV": "6-0", "HOME": "17-1", "ROAD": "11-3", "Neutral": "0-0",
      "OT": "0-0", "LAST10": "9-1", "STREAK": "W7"},
@@ -435,6 +435,77 @@ teams = [
     {"name": "Washington Wizards", "image": "/static/nba_team_logos/Eastern_Conference/WashingtonWizards.svg", "W": 5,
      "L": 25, "win_percentage": .167, "GB": 22.5, "CONF": "5-17", "DIV": "4-3", "HOME": "5-12", "ROAD": "1-12",
      "Neutral": "0-0", "OT": "0-1", "LAST10": "3-7", "STREAK": "L2"},
+    ]
+
+western_teams= [    {"name": "Oklahoma City Thunder", "image": "/static/nba_team_logos/Western_Conference/Oklahoma_City_logo.svg",
+     "W": 29, "L": 5,
+     "win_percentage": .853, "GB": 0, "CONF": "19-5", "DIV": "5-1", "HOME": "15-2", "ROAD": "13-3",
+     "Neutral": "1-0", "OT": "0-0", "LAST10": "10-0", "STREAK": "W14"},
+
+    {"name": "Houston Rockets", "image": "/static/nba_team_logos/Western_Conference/Houston_logo.svg", "W": 22, "L": 12,
+     "win_percentage": .647, "GB": 7, "CONF": "14-8", "DIV": "7-1", "HOME": "12-6", "ROAD": "10-5",
+     "Neutral": "0-1", "OT": "2-1", "LAST10": "6-4", "STREAK": "L1"},
+
+    {"name": "Memphis Grizzlies", "image": "/static/nba_team_logos/Western_Conference/Memphis_logo.svg", "W": 23,
+     "L": 13,
+     "win_percentage": .639, "GB": 7, "CONF": "10-10", "DIV": "2-2", "HOME": "14-4", "ROAD": "9-9",
+     "Neutral": "0-0", "OT": "0-0", "LAST10": "5-5", "STREAK": "L2"},
+
+    {"name": "Denver Nuggets", "image": "/static/nba_team_logos/Western_Conference/Denver_logo.svg", "W": 20, "L": 14,
+     "win_percentage": .588, "GB": 9, "CONF": "13-10", "DIV": "4-3", "HOME": "10-6", "ROAD": "10-8",
+     "Neutral": "0-0", "OT": "4-0", "LAST10": "6-4", "STREAK": "W1"},
+
+    {"name": "Los Angeles Lakers", "image": "/static/nba_team_logos/Western_Conference/Los Angeles_logo.svg", "W": 20,
+     "L": 14,
+     "win_percentage": .588, "GB": 9, "CONF": "16-7", "DIV": "6-2", "HOME": "12-5", "ROAD": "8-9",
+     "Neutral": "0-0", "OT": "0-0", "LAST10": "7-3", "STREAK": "W2"},
+
+    {"name": "Dallas Mavericks", "image": "/static/nba_team_logos/Western_Conference/Dallas_logo.svg", "W": 20, "L": 15,
+     "win_percentage": .571, "GB": 9.5, "CONF": "14-12", "DIV": "4-2", "HOME": "10-6", "ROAD": "10-9",
+     "Neutral": "0-0", "OT": "0-1", "LAST10": "4-6", "STREAK": "L4"},
+
+    {"name": "LA Clippers", "image": "/static/nba_team_logos/Western_Conference/clippers_logo.svg", "W": 20, "L": 15,
+     "win_percentage": .571, "GB": 9.5, "CONF": "14-14", "DIV": "5-2", "HOME": "12-6", "ROAD": "8-9",
+     "Neutral": "0-0", "OT": "0-1", "LAST10": "6-4", "STREAK": "W1"},
+
+    {"name": "Golden State Warriors", "image": "/static/nba_team_logos/Western_Conference/Golden State_logo.svg",
+     "W": 18,
+     "L": 16,
+     "win_percentage": .529, "GB": 11, "CONF": "14-12", "DIV": "1-5", "HOME": "10-8", "ROAD": "8-8",
+     "Neutral": "0-0", "OT": "1-0", "LAST10": "4-6", "STREAK": "W2"},
+
+    {"name": "San Antonio Spurs", "image": "/static/nba_team_logos/Western_Conference/San Antonio_logo.svg", "W": 18,
+     "L": 17,
+     "win_percentage": .514, "GB": 11.5, "CONF": "15-14", "DIV": "2-4", "HOME": "12-8", "ROAD": "6-9",
+     "Neutral": "0-0", "OT": "1-1", "LAST10": "5-5", "STREAK": "L1"},
+
+    {"name": "Minnesota Timberwolves", "image": "/static/nba_team_logos/Western_Conference/Minnesota_logo.svg", "W": 17,
+     "L": 17,
+     "win_percentage": .500, "GB": 12, "CONF": "14-10", "DIV": "2-3", "HOME": "9-7", "ROAD": "8-10",
+     "Neutral": "0-0", "OT": "1-1", "LAST10": "4-6", "STREAK": "L3"},
+
+    {"name": "Sacramento Kings", "image": "/static/nba_team_logos/Western_Conference/Sacramento_logo.svg", "W": 16,
+     "L": 19,
+     "win_percentage": .457, "GB": 13.5, "CONF": "12-14", "DIV": "2-6", "HOME": "9-12", "ROAD": "7-7",
+     "Neutral": "0-0", "OT": "1-2", "LAST10": "4-6", "STREAK": "W3"},
+
+    {"name": "Phoenix Suns", "image": "/static/nba_team_logos/Western_Conference/Phoenix_logo.svg", "W": 15, "L": 18,
+     "win_percentage": .455, "GB": 13.5, "CONF": "13-10", "DIV": "5-4", "HOME": "10-8", "ROAD": "5-10",
+     "Neutral": "0-0", "OT": "1-1", "LAST10": "3-7", "STREAK": "L4"},
+
+    {"name": "Portland Trail Blazers", "image": "/static/nba_team_logos/Western_Conference/Portland_logo.svg", "W": 12,
+     "L": 22,
+     "win_percentage": .353, "GB": 17, "CONF": "10-20", "DIV": "4-4", "HOME": "8-8", "ROAD": "4-14",
+     "Neutral": "0-0", "OT": "0-0", "LAST10": "4-6", "STREAK": "W1"},
+
+    {"name": "Utah Jazz", "image": "/static/nba_team_logos/Western_Conference/Utah_logo.svg", "W": 8, "L": 25,
+     "win_percentage": .242, "GB": 20.5, "CONF": "3-21", "DIV": "1-5", "HOME": "2-12", "ROAD": "6-13",
+     "Neutral": "0-0", "OT": "0-0", "LAST10": "3-7", "STREAK": "W1"},
+
+    {"name": "New Orleans Pelicans", "image": "/static/nba_team_logos/Western_Conference/New Orleans_logo.svg", "W": 6,
+     "L": 29,
+     "win_percentage": .171, "GB": 23.5, "CONF": "3-17", "DIV": "0-6", "HOME": "5-14", "ROAD": "1-15",
+     "Neutral": "0-0", "OT": "0-0", "LAST10": "1-9", "STREAK": "L3"}
 
 ]
 
@@ -464,5 +535,3 @@ games = [
      "final_score": "132-121"},
 
 ]
-
-

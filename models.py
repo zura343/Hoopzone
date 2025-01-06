@@ -1,6 +1,5 @@
 from ext import db, login_manager
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import datetime
 from flask_login import UserMixin
 
 
@@ -26,7 +25,6 @@ class Jersey(db.Model, BaseModel):
     rating = db.Column(db.Float(), default=0)
     total_ratings = db.Column(db.Integer(), default=0)
     rating_count = db.Column(db.Integer(), default=0)
-
 
 
 class Tickets(db.Model, BaseModel):
@@ -76,7 +74,6 @@ class User(db.Model, BaseModel, UserMixin):
         self.age = age
         self.role = role
 
-
     def __repr__(self):
         return f"<User {self.username}>"
 
@@ -99,12 +96,12 @@ class News(db.Model, BaseModel):
 class Championships(db.Model, BaseModel):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String())
-    country =db.Column(db.String())
+    country = db.Column(db.String())
     official_site = db.Column(db.String)
     logo = db.Column(db.String)
 
 
-class Teams(db.Model, BaseModel):
+class EasternTeams(db.Model, BaseModel):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String)
     image = db.Column(db.String)
@@ -116,7 +113,25 @@ class Teams(db.Model, BaseModel):
     DIV = db.Column(db.String)
     HOME = db.Column(db.String)
     ROAD = db.Column(db.String)
-    Neutral	=db.Column(db.String)
+    Neutral = db.Column(db.String)
+    OT = db.Column(db.String)
+    LAST10 = db.Column(db.String)
+    STREAK = db.Column(db.String)
+
+
+class WesternTeams(db.Model, BaseModel):
+    id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String)
+    image = db.Column(db.String)
+    W = db.Column(db.Integer)
+    L = db.Column(db.Integer)
+    win_percentage = db.Column(db.Integer)
+    GB = db.Column(db.Float)
+    CONF = db.Column(db.String)
+    DIV = db.Column(db.String)
+    HOME = db.Column(db.String)
+    ROAD = db.Column(db.String)
+    Neutral = db.Column(db.String)
     OT = db.Column(db.String)
     LAST10 = db.Column(db.String)
     STREAK = db.Column(db.String)
@@ -129,5 +144,3 @@ class Games(db.Model, BaseModel):
     team_2 = db.Column(db.String)
     team_2_img = db.Column(db.String)
     final_score = db.Column(db.String)
-
-
