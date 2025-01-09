@@ -22,6 +22,9 @@
                                 {{form.hidden_tag() }}
 
                                 <div>
+                                    {% for error in form.username.errors %}
+                                    <small class="text-danger">{{ error }}</small>
+                                    {% endfor %}
                                     {{ form.username(placeholder=form.username.label.text, class="form-control
                                     form-white mb-4 form-control-lg") }}
                                 </div>

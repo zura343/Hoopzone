@@ -20,7 +20,7 @@ with app.app_context():
         new_user.create()
 
     for player in players:
-        new_player = Player(player=player["player"], team=player["team"], gp=player["gp"], min=player["min"],
+        new_player = Player(player=player["player"], player_photo=player["player_photo"], team=player["team"], gp=player["gp"], min=player["min"],
                             pts=player["pts"],
                             fgm=player["fgm"], fga=player["fga"], fg_pct=player["fg_pct"], three_pm=player["three_pm"],
                             three_pa=player["three_pa"],

@@ -98,6 +98,7 @@ users = {
 players = [
     {
         "player": "Giannis Antetokounmpo",
+        "player_photo": "/static/player/giannis_photo.png",
         "team": "MIL",
         "gp": 17,
         "min": 35.2,
@@ -116,7 +117,8 @@ players = [
         "eff": 37.6,
     },
     {
-        "player": "Shai Gilgeous-Alexander", "team": "OKC", "gp": 30, "min": 34.7,
+        "player": "Shai Gilgeous-Alexander", "player_photo": "/static/player/Shai Gilgeous-Alexander_photo.png", "team": "OKC", "gp": 30,
+        "min": 34.7,
         "pts": 30.8, "fgm": 10.8, "fga": 21.0, "fg_pct": 51.7,
         "three_pm": 2.2, "three_pa": 6.2, "three_pct": 34.8,
         "ftm": 7.0, "fta": 8.0, "ft_pct": 87.9,
@@ -128,7 +130,7 @@ players = [
         "eff": 31.8,
     },
     {
-        "player": "Nikola Jokić", "team": "DEN", "gp": 27, "min": 37.1,
+        "player": "Nikola Jokić", "player_photo": "/static/player/Nikola Jokić_photo.png", "team": "DEN", "gp": 27, "min": 37.1,
         "pts": 30.8, "fgm": 11.7, "fga": 20.5, "fg_pct": 57.1,
         "three_pm": 2.3, "three_pa": 4.5, "three_pct": 50.0,
         "ftm": 5.1, "fta": 6.4, "ft_pct": 79.3,
@@ -141,6 +143,7 @@ players = [
     },
     {
         "player": "LaMelo Ball",
+        "player_photo": "/static/player/LaMelo Ball-photo.png",
         "team": "CHA",
         "gp": 22,
         "min": 33.7,
@@ -165,6 +168,7 @@ players = [
     },
     {
         "player": "Jayson Tatum",
+        "player_photo": "/static/player/Jayson Tatum-photo.png",
         "team": "BOS",
         "gp": 28,
         "min": 36.4,
@@ -189,6 +193,7 @@ players = [
     },
     {
         "player": "De'Aaron Fox",
+        "player_photo": "/static/player/De'Aaron_photo.png",
         "team": "SAC",
         "gp": 32,
         "min": 37.3,
@@ -213,6 +218,7 @@ players = [
     },
     {
         "player": "Anthony Davis",
+        "player_photo": "/static/player/Anthony_photo.png",
         "team": "LAL",
         "gp": 30,
         "min": 34.7,
@@ -237,6 +243,7 @@ players = [
     },
     {
         "player": "Tyrese Maxey",
+        "player_photo": "/static/player/Maxey_photo.png",
         "team": "PHI",
         "gp": 23,
         "min": 37.2,
@@ -261,6 +268,7 @@ players = [
     },
     {
         "player": "Damian Lillard",
+        "player_photo": "/static/player/Lillard_photo.png",
         "team": "MIL",
         "gp": 23,
         "min": 36.3,
@@ -285,6 +293,7 @@ players = [
     },
     {
         "player": "Jalen Brunson",
+        "player_photo": "/static/player/Brunson_photo.png",
         "team": "NYK",
         "gp": 32,
         "min": 34.9,
@@ -309,6 +318,7 @@ players = [
     },
 
     {"player": "Goga Bitadze",
+     "player_photo": "/static/player/Bitadze_photo.png",
      "team": "ORL",
      "gp": 31,
      "min": 24.8,
@@ -435,9 +445,10 @@ eastern_teams = [
     {"name": "Washington Wizards", "image": "/static/nba_team_logos/Eastern_Conference/WashingtonWizards.svg", "W": 5,
      "L": 25, "win_percentage": .167, "GB": 22.5, "CONF": "5-17", "DIV": "4-3", "HOME": "5-12", "ROAD": "1-12",
      "Neutral": "0-0", "OT": "0-1", "LAST10": "3-7", "STREAK": "L2"},
-    ]
+]
 
-western_teams= [    {"name": "Oklahoma City Thunder", "image": "/static/nba_team_logos/Western_Conference/Oklahoma_City_logo.svg",
+western_teams = [
+    {"name": "Oklahoma City Thunder", "image": "/static/nba_team_logos/Western_Conference/Oklahoma_City_logo.svg",
      "W": 29, "L": 5,
      "win_percentage": .853, "GB": 0, "CONF": "19-5", "DIV": "5-1", "HOME": "15-2", "ROAD": "13-3",
      "Neutral": "1-0", "OT": "0-0", "LAST10": "10-0", "STREAK": "W14"},
@@ -507,7 +518,7 @@ western_teams= [    {"name": "Oklahoma City Thunder", "image": "/static/nba_team
      "win_percentage": .171, "GB": 23.5, "CONF": "3-17", "DIV": "0-6", "HOME": "5-14", "ROAD": "1-15",
      "Neutral": "0-0", "OT": "0-0", "LAST10": "1-9", "STREAK": "L3"}
 
-]
+    ]
 
 games = [
     {"team_1": "NYK",

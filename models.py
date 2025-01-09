@@ -38,6 +38,7 @@ class Tickets(db.Model, BaseModel):
 class Player(db.Model, BaseModel):
     id = db.Column(db.Integer(), primary_key=True)
     player = db.Column(db.String())
+    player_photo = db.Column(db.String())
     team = db.Column(db.String())
     gp = db.Column(db.Integer())
     pts = db.Column(db.Float())

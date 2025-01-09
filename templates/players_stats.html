@@ -2,7 +2,7 @@
 
 {% block body %}
 <div class="container mt-5">
-    <table class="table table-bordered table-striped table-hover text-center">
+    <table class="table table-bordered table-hover text-center align-middle">
         <thead class="table-light">
         <tr>
             <th>Player</th>
@@ -35,7 +35,9 @@
         <tbody>
         {% for stat in stats %}
         <tr>
-            <td>{{ stat.player }}</td>
+            <td class="text-start"><img width="50" height="40" src="{{ stat.player_photo }}" class="me-2"> {{
+                stat.player }}
+            </td>
             <td>{{ stat.team }}</td>
             <td>{{ stat.gp }}</td>
             <td>{{ stat.min }}</td>
@@ -67,5 +69,19 @@
         </tbody>
     </table>
 </div>
+
+
+<style>
+    .table {
+        font-size: 0.9rem;
+    }
+    .table img {
+        vertical-align: middle;
+    }
+    .table thead th {
+        font-weight: bold;
+    }
+
+</style>
 
 {% endblock %}
