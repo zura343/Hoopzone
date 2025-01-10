@@ -243,7 +243,7 @@ def edit_player_stats(player_id):
         player_stats.min = form.min.data
 
         player_stats.save()
-        return redirect(url_for("player_stats"))
+        return redirect(url_for("players_stats"))
 
     return render_template("edit_player_stats.html", player_stats=player_stats, form=form)
 
