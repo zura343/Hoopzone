@@ -60,11 +60,11 @@ def jersey_view():
     jerseys = Jersey.query.all()
     return render_template("jersey.html", jerseys=jerseys, form=form)
 
+
 @app.route('/players_stats')
 def players_stats():
     stats = Player.query.order_by(Player.pts.desc()).all()
     return render_template("players_stats.html", stats=stats)
-
 
 
 @app.route('/create_product', methods=["GET", "POST"])
@@ -86,6 +86,8 @@ def add_jersey():
 
     print(form.errors)
     return render_template("create_product.html", form=form)
+
+
 @app.route("/edit_jersey/<int:jersey_id>", methods=["GET", "POST"])
 @login_required
 def edit_product(jersey_id):
@@ -240,20 +242,21 @@ def edit_player_stats(player_id):
         player_stats.eff = form.eff.data
         player_stats.min = form.min.data
 
-        db.session.save()
-
-
+        player_stats.save()
+        return redirect(url_for("player_stats"))
 
     return render_template("edit_player_stats.html", player_stats=player_stats, form=form)
+
 
 @app.route("/championships")
 def championships():
     championships = Championships.query.all()
     return render_template("championships.html", championships=championships)
 
+
 @app.route("/standing", methods=["GET"])
 def standing():
-    easternteams= EasternTeams.query.order_by(EasternTeams.win_percentage.desc()).all()
+    easternteams = EasternTeams.query.order_by(EasternTeams.win_percentage.desc()).all()
     westernteams = WesternTeams.query.order_by(WesternTeams.win_percentage.desc()).all()
     return render_template("standing.html", easternteams=easternteams, westernteams=westernteams)
 
@@ -299,7 +302,6 @@ def edit_standing(easternteams_id):
     return render_template("edit_stending.html", form=form)
 
 
-
 @app.route("/edit_westernteam/<int:westernteam_id>", methods=["GET", "POST"])
 @login_required
 def edit_westernteam(westernteam_id):
@@ -335,7 +337,7 @@ def edit_westernteam(westernteam_id):
         westernteam.LAST10 = form.LAST10.data
         westernteam.STREAK = form.STREAK.data
 
-        db.session.commit()
+        westernteam.save()
         return redirect(url_for("standing"))
 
     return render_template("edit_westernteam", form=form)
